@@ -1,0 +1,34 @@
+.header {
+    grid-area: h;
+    background-color: skyblue;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
+.header img {
+    width: 70px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-left: 110px;
+
+}
+
+.item {
+    font-size: 70px;
+    color: #ffd515;
+    padding-left: 100px;
+}
+
+.loginBlock {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 110px;
+    /*float: right;*/
+}
+
+.loginBlock a {
+    color: white;
+}

@@ -1,0 +1,26 @@
+.description_info {
+    padding-right: 650px;
+    padding-top: 20px;
+
+}
+.mainPhoto {
+    max-width: 300px;
+    margin: 2px;
+}
+
+.contact {
+    padding-left: 20px;
+}
+
+.full_profile {
+    padding-top: 10px;
+    display: flex;
+    width: 98%;
+    margin: auto;
+}
+
+.name {
+    padding-left: 50px;
+    border-bottom-style: double;
+    border-color: black;
+}

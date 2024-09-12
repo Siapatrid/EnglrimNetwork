@@ -1,0 +1,13 @@
+.item {
+    color: brown;
+}
+
+.postsBlock {
+    margin: auto;
+    width: 40%;
+    padding: 10px;
+}
+
+.posts {
+    margin-top: 10px;
+}

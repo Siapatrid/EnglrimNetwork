@@ -1,0 +1,27 @@
+.app-wrapper {
+    display: grid;
+    grid-template-areas:
+        'h h'
+        'n c';
+    /*grid-template-rows: 100px 1fr;*/
+    /*grid-template-columns: 2fr 10fr;*/
+    /*grid-gap: 10px;*/
+    /*justify-items: center;*/
+    /*align-items: center;*/
+    grid-template-columns: 2fr 10fr;
+    grid-template-rows: auto 1fr; /* Распределение строк: шапка, контент, подвал */
+    width: 80%; /* Ширина контейнера */
+    max-width: 1200px; /* Максимальная ширина */
+    margin: auto; /* Центрирование по горизонтали */
+    height: 100vh; /* Высота контейнера по высоте экрана */
+    justify-items: center; /* Центрирование элементов по горизонтали */
+    align-items: center; /* Центрирование элементов по вертикали */
+    grid-gap: 5px;
+    padding-right: 70px;
+}
+
+.app-wrapper-content {
+    grid-area: c;
+    background-color: rgba(0, 0, 0, 0.02);
+}
+

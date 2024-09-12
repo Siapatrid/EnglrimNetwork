@@ -1,0 +1,19 @@
+.nav {
+    grid-area: n;
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    height: 91%;
+}
+
+.item a {
+    color: white;
+    text-decoration: none;
+}
+
+.item a.active {
+    color: gold;
+}
+
+.item a.pending {
+    color: green;
+}

@@ -1,0 +1,14 @@
+<script>
+    doItAfter(4)
+        .then(() => console.log('Hello!'))
+        .then(() => console.log('How are ya?'))
+
+    function doItAfter(seconds) {
+        let promise = new Promise((resolve, reject) => {
+            setTimeout(() => {
+                resolve();
+            }, seconds * 1000);
+        });
+        return promise;
+    }
+</script>

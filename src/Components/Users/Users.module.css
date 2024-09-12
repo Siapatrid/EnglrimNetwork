@@ -1,0 +1,33 @@
+.ava {
+    width: 50px;
+    border-radius: 30px;
+    margin-top: 5px;
+}
+
+.userContainer {
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    padding: 60px;
+}
+
+.answerContainer {
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
+.border {
+
+    border-color: teal;
+}
+.fieldset {
+    border: none;
+    padding: 2rem 0;
+    margin-right: 70rem;
+    border-bottom: 3px solid #ffd515;
+    border-right: 3px solid #ffd515;
+    border-left: 3px solid #ffd515;
+}

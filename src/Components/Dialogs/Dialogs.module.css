@@ -1,0 +1,42 @@
+.dialogs {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+.dialogsItems {
+    padding: 10px;
+}
+
+.dialogsItems .active {
+    color: gold;
+}
+
+.dialog {
+}
+
+.messages {
+    padding: 10px;
+}
+.userMessages {
+    /*text-align: right;*/
+    padding: 60px;
+}
+.AnswerMessages {
+    padding: 10px;
+}
+
+.ava {
+    width: 50px;
+    border-radius: 30px;
+}
+
+.userContainer {
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+    padding: 60px;
+}
+
+.answerContainer {
+    display: flex;
+    align-items: center; /* Выравнивание по центру по вертикали */
+}
