@@ -1,17 +1,17 @@
-import React, { Component } from 'react'
-import style from './Header.module.css'
-import { Navigate, NavLink } from 'react-router-dom'
+import React, { Component } from 'react';
+import style from './Header.module.css';
+import { Navigate, NavLink } from 'react-router-dom';
 
 const Header = (props) => {
     const handleClick = () => {
-        props.logoutMeTC()
-        return <NavLink to={'/login'} />
-    }
+        props.logoutMeTC();
+        return <NavLink to={'/login'} />;
+    };
 
     return (
         <header className={style.header}>
             <img src="https://www.logodesignlove.com/wp-content/uploads/2022/01/logo-wave-symbol-01.jpg" />
-            <a className={style.item}>ENGLDOM UNIVERSE</a>
+            <a className={style.item}>ENGRIM UNIVERSE</a>
             <div className={style.loginBlock}>
                 {props.isAuth ? (
                     <div>
@@ -23,7 +23,7 @@ const Header = (props) => {
                 )}
             </div>
         </header>
-    )
-}
+    );
+};
 
-export default Header
+export default Header;
