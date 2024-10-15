@@ -1,12 +1,6 @@
-import React, { Component } from 'react'
-import style from './Navbar.module.css'
-import { NavLink } from 'react-router-dom'
-import Online from './Friends_online/Online'
-
-// let c1 = 'item';
-// let c2 = 'active';
-// let classes = c1 + " " + c2;
-// let classNew = `${stile.item} ${stile.active}` или {stile.item + " " + stile.active};
+import React, { Component } from 'react';
+import style from './Navbar.module.css';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = (props) => {
     return (
@@ -63,6 +57,6 @@ const Navbar = (props) => {
             </div>
             <div>Friend</div>
         </nav>
-    )
-}
-export default Navbar
+    );
+};
+export default Navbar;

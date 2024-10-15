@@ -1,45 +1,38 @@
-import React from 'react'
-import stile from './Dialogs.module.css'
-import DialogItem from './DialogItem/DialogItem'
-import Message from './Message/Message'
-import { Navigate } from 'react-router-dom'
-import { Field, reduxForm } from 'redux-form'
-import { Textarea } from '../Common/FormsControls/FormsControls'
-import { maxLengthCreator, required } from '../Utilits/Validators/Validators'
+import React from 'react';
+import stile from './Dialogs.module.css';
+import DialogItem from './DialogItem/DialogItem';
+import Message from './Message/Message';
+import { Navigate } from 'react-router-dom';
+import { Field, reduxForm } from 'redux-form';
+import { Textarea } from '../Common/FormsControls/FormsControls';
+import { maxLengthCreator, required } from '../Utilits/Validators/Validators';
 
 const Dialogs = (props) => {
     let messageElements = props.dialogsPage.messagesData.map((d) => (
         <Message message={d.message} stile={d.stile} ava={d.ava} key={d.id} />
-    ))
+    ));
 
     let dialogsElements = props.dialogsPage.dialogsData.map((props) => (
         <DialogItem name={props.name} id={props.id} key={props.id} />
-    ))
+    ));
 
     let addNewMessage = (value) => {
-        props.newMessage(value.newMessageText)
-    }
+        props.newMessage(value.newMessageText);
+    };
 
     if (!props.isAuth) {
-        return <Navigate to="/login" />
+        return <Navigate to="/login" />;
     }
-
     return (
         <div className={stile.dialogs}>
-            <div className={stile.dialogsItems}>
-                {dialogsElements}
-                {/*<DialogItem name={props.dialogsData[0].name} id={props.dialogsData[0].id}/>*/}
-                {/*<DialogItem name={props.dialogsData[1].name} id={props.dialogsData[1].id}/>*/}
-                <DialogItem name="Alex" id="3" />
-                <DialogItem name="Queen" id="4" />
-            </div>
+            <div className={stile.dialogsItems}>{dialogsElements}</div>
             <div className={stile.messages}>{messageElements}</div>
             <AddMessageReduxForm onSubmit={addNewMessage} />
         </div>
-    )
-}
+    );
+};
 
-const maxLength50 = maxLengthCreator(50)
+const maxLength50 = maxLengthCreator(50);
 const AddMessageForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
@@ -53,11 +46,10 @@ const AddMessageForm = (props) => {
                 <button>send</button>
             </div>
         </form>
-    )
-}
+    );
+};
 
 const AddMessageReduxForm = reduxForm({
     form: 'dialogAddMessageForm',
-    // fields: ['newMessagetext'],
-})(AddMessageForm)
-export default Dialogs
+})(AddMessageForm);
+export default Dialogs;

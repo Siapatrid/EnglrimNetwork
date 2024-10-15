@@ -1,9 +1,9 @@
-import React from 'react'
-import { Field, reduxForm } from 'redux-form'
-import { Input, Textarea } from '../../Common/FormsControls/FormsControls'
-import { createField } from '../../Common/FormsControls/FormsControls'
-import { connect } from 'react-redux'
-import style from '../../Common/FormsControls/FormsControls.modul.css'
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { Input, Textarea } from '../../Common/FormsControls/FormsControls';
+import { createField } from '../../Common/FormsControls/FormsControls';
+import { connect } from 'react-redux';
+import style from '../../Common/FormsControls/FormsControls.modul.css';
 
 const ProfileInfoForm = ({ handleSubmit, profile, error }) => {
     return (
@@ -39,7 +39,7 @@ const ProfileInfoForm = ({ handleSubmit, profile, error }) => {
                             {key}:
                             {createField('', 'contacts.' + key, [], Input)}
                         </div>
-                    )
+                    );
                 })}
             </div>
             <button>Save</button>
@@ -47,8 +47,8 @@ const ProfileInfoForm = ({ handleSubmit, profile, error }) => {
                 {error && <div className={style.formSummaryError}>{error}</div>}
             </div>
         </form>
-    )
-}
+    );
+};
 
 const ProfileReduxForm = reduxForm({
     form: 'edit-profile',
@@ -58,15 +58,5 @@ const ProfileReduxForm = reduxForm({
         'lookingForAJobDescription',
         'aboutMe',
     ],
-})(ProfileInfoForm)
-
-// const ProfileForm = connect(
-//     (props) => ({
-//         profile: props.profile,
-//         initialValues: props.initialValues,
-//         onSubmit: props.onSubmit,
-//     }),
-//     {}
-// )(ProfileReduxForm)
-
-export default ProfileReduxForm
+})(ProfileInfoForm);
+export default ProfileReduxForm;

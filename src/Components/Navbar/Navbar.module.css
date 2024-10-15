@@ -1,19 +1,33 @@
-.nav {
-    grid-area: n;
-    background-color: rgba(0, 0, 0, 0.3);
-    padding: 20px;
-    height: 91%;
-}
+/*.nav {*/
+/*    grid-area: n;*/
+/*    !*background-color: rgba(0, 0, 0, 0.3);*!*/
+/*    background-color: #4fa178;*/
+/*    padding: 20px;*/
+/*    height: 91%;*/
+/*}*/
 
-.item a {
-    color: white;
-    text-decoration: none;
-}
+/*.item a {*/
+/*    font-family: 'Cinzel Decorative', serif; !* Фантазийный декоративный шрифт *!*/
+/*    color: #f4e8c1;*/
+/*    text-decoration: none;*/
+/*    margin: 5px;*/
+/*    padding: 1px 20px;*/
+/*    border: 2px solid #d4af37;*/
+/*    border-radius: 10px;*/
+/*    transition: all 0.3s ease-in-out;*/
+/*    display: block;*/
+/*}*/
 
-.item a.active {
-    color: gold;
-}
+/*a:hover {*/
+/*    background-color: #d4af37; !* Золотой эффект при наведении *!*/
+/*    color: #1a0e05;*/
+/*    transform: scale(1.05); !* Легкое увеличение при наведении *!*/
+/*}*/
 
-.item a.pending {
-    color: green;
-}
+/*.item a.active {*/
+/*    color: gold;*/
+/*}*/
+
+/*.item a.pending {*/
+/*    color: green;*/
+/*}*/

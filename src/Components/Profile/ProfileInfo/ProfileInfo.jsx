@@ -1,28 +1,25 @@
-import React, { Component, useState } from 'react'
-import style from './ProfileInfo.module.css'
-import Preloader from '../../Common/Preloader/Preloader'
-import ProfileStatusWithHooks from './PtofileStatusWithHooks'
-import ProfileReduxForm from './ProfileInfoForm'
-import { getProfileTC } from '../../../Redux/Profile-reducer'
-import ProfileInfoForm from './ProfileInfoForm'
-import ProfileForm from './ProfileInfoForm'
+import React, { Component, useState } from 'react';
+import style from './ProfileInfo.module.css';
+import Preloader from '../../Common/Preloader/Preloader';
+import ProfileStatusWithHooks from './PtofileStatusWithHooks';
+import ProfileReduxForm from './ProfileInfoForm';
 const ProfileInfo = (props) => {
-    let [editMode, setEditMode] = useState(false)
+    let [editMode, setEditMode] = useState(false);
 
     const onSubmit = (formData) => {
-        props.saveProfile(formData)
-        setEditMode(false)
-    }
+        props.saveProfile(formData);
+        setEditMode(false);
+    };
 
     if (!props.profile) {
-        return <Preloader />
+        return <Preloader />;
     }
 
     const photoIsChosen = (e) => {
         if (e.target.files.length) {
-            props.savePhoto(e.target.files[0])
+            props.savePhoto(e.target.files[0]);
         }
-    }
+    };
     return (
         <div className={style.full_profile}>
             <div>
@@ -56,7 +53,7 @@ const ProfileInfo = (props) => {
                 ) : (
                     <ProfileInfoData
                         goToEditMode={() => {
-                            setEditMode(true)
+                            setEditMode(true);
                         }}
                         profile={props.profile}
                         isOwner={props.isOner}
@@ -64,8 +61,8 @@ const ProfileInfo = (props) => {
                 )}
             </div>
         </div>
-    )
-}
+    );
+};
 
 const ProfileInfoData = ({ profile, isOwner, goToEditMode }) => {
     return (
@@ -93,7 +90,7 @@ const ProfileInfoData = ({ profile, isOwner, goToEditMode }) => {
                                 contactValue={profile.contacts[key]}
                             />
                         )
-                    )
+                    );
                 })}
             </div>
             {isOwner && (
@@ -102,16 +99,15 @@ const ProfileInfoData = ({ profile, isOwner, goToEditMode }) => {
                 </div>
             )}
         </div>
-    )
-}
+    );
+};
 
 const Contact = ({ contactTitle, contactValue }) => {
     return (
         <div className={style.contact}>
             <b>{contactTitle}</b>: {contactValue}
         </div>
-    )
-}
+    );
+};
 
-// https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg
-export default ProfileInfo
+export default ProfileInfo;

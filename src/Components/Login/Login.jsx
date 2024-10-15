@@ -1,10 +1,11 @@
-import React from 'react'
-import { compose } from 'redux'
-import { connect } from 'react-redux'
-import { getCaptchaUrlTC, loginMeTC } from '../../Redux/Auth-reducer'
-import { Navigate } from 'react-router-dom'
+import React from 'react';
+import { compose } from 'redux';
+import { connect } from 'react-redux';
+import { getCaptchaUrlTC, loginMeTC } from '../../Redux/Auth-reducer';
+import { Navigate } from 'react-router-dom';
 
-import LoginReduxForm from './LoginForm'
+import LoginReduxForm from './LoginForm';
+import { LoginOutlined } from '@ant-design/icons';
 
 const Login = (props) => {
     const onSubmit = (formData) => {
@@ -13,15 +14,16 @@ const Login = (props) => {
             formData.password,
             formData.rememberMe,
             formData.captcha
-        )
-    }
+        );
+    };
 
     if (props.isAuth) {
-        return <Navigate to={'/profile'} />
+        return <Navigate to={'/profile'} />;
     }
 
     return (
         <div>
+            <LoginOutlined />
             <h1>Login</h1>
             <LoginReduxForm
                 onSubmit={onSubmit}
@@ -31,13 +33,14 @@ const Login = (props) => {
                 captchaUrl={props.captchaUrl}
             />
         </div>
-    )
-}
+    );
+};
 
 const mapStateToPros = (state) => ({
     isAuth: state.auth.isAuth,
     captchaUrl: state.auth.captchaUrl,
-})
+});
+
 export default compose(connect(mapStateToPros, { loginMeTC, getCaptchaUrlTC }))(
     Login
-)
+);

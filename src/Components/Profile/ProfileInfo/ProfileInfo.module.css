@@ -4,7 +4,8 @@
 
 }
 .mainPhoto {
-    max-width: 300px;
+    max-width: 78%;
+    height: auto;
     margin: 2px;
 }
 

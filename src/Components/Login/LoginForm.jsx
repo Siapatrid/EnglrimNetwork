@@ -1,13 +1,27 @@
-import React from 'react'
-import { Field, reduxForm } from 'redux-form'
-import { loginMeTC } from '../../Redux/Auth-reducer'
-import { Input } from '../Common/FormsControls/FormsControls'
-import { required } from '../Utilits/Validators/Validators'
-import style from '../Common/FormsControls/FormsControls.modul.css'
-import { createField } from '../Common/FormsControls/FormsControls'
+import React from 'react';
+import { Field, reduxForm } from 'redux-form';
+import { loginMeTC } from '../../Redux/Auth-reducer';
+import { Input } from '../Common/FormsControls/FormsControls';
+import { required } from '../Utilits/Validators/Validators';
+import style from '../Common/FormsControls/FormsControls.modul.css';
+import { createField } from '../Common/FormsControls/FormsControls';
+import { useDispatch } from 'react-redux';
 const LoginForm = (props) => {
+    const dispatch = useDispatch();
+
+    const onSubmit = (formData) => {
+        dispatch(
+            loginMeTC(
+                formData.email,
+                formData.password,
+                formData.rememberMe,
+                formData.captcha
+            )
+        );
+    };
+
     return (
-        <form onSubmit={props.handleSubmit}>
+        <form onSubmit={props.handleSubmit(onSubmit)}>
             <div>
                 <Field
                     type="text"
@@ -49,24 +63,15 @@ const LoginForm = (props) => {
                 <div className={style.formSummaryError}>{props.error}</div>
             )}
             <div>
-                <button
-                    onClick={loginMeTC(
-                        props.email,
-                        props.password,
-                        props.rememberMe
-                    )}
-                >
-                    Login
-                </button>
+                <button type="submit">Login</button>
                 {/*<button onClick={getCaptchaTC()}>captcha</button>*/}
             </div>
         </form>
-    )
-}
+    );
+};
 
 const LoginReduxForm = reduxForm({
     form: 'login',
-    fields: ['email', 'password', 'rememberMe'],
-})(LoginForm)
+})(LoginForm);
 
-export default LoginReduxForm
+export default LoginReduxForm;

@@ -3,11 +3,6 @@
     grid-template-areas:
         'h h'
         'n c';
-    /*grid-template-rows: 100px 1fr;*/
-    /*grid-template-columns: 2fr 10fr;*/
-    /*grid-gap: 10px;*/
-    /*justify-items: center;*/
-    /*align-items: center;*/
     grid-template-columns: 2fr 10fr;
     grid-template-rows: auto 1fr; /* Распределение строк: шапка, контент, подвал */
     width: 80%; /* Ширина контейнера */

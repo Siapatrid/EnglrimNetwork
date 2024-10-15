@@ -2,18 +2,21 @@ import React, { Component, useEffect, useState } from 'react';
 import SingleUser from './SingleUser/SingleUser';
 import stile from './Users.module.css';
 import Preloader from '../Common/Preloader/Preloader';
-import { fieldArrayFieldsPropTypes as visiblePages } from 'redux-form';
-const Users = (props) => {
+const Friends = (props) => {
     useEffect(() => {
-        if (props.usersData.length === 0) {
-            props.getUsers(props.currentPage, props.pageSize);
+        if (props.friendsData.length === 0) {
+            props.getFriends(
+                props.currentPage,
+                props.pageSize,
+                '',
+                props.friend
+            );
         }
     }, []);
 
     const [pageGroup, setPageGroup] = useState(0); // Состояние для текущей группы страниц
     const pagesPerGroup = 5; // Количество страниц в одной группе
-
-    let visibleUsers = props.usersData.map((d) => (
+    let visibleUsers = props.friendsData.map((d) => (
         <SingleUser
             name={d.name}
             id={d.id}
@@ -39,11 +42,10 @@ const Users = (props) => {
     const startPage = pageGroup * pagesPerGroup;
     const endPage = Math.min(startPage + pagesPerGroup, pagesCount);
     const visiblePages = pages.slice(startPage, endPage);
-
     return (
         <div>
             {props.isFetching ? <Preloader /> : null}
-            <h1>Users</h1>
+            <h1>Friends</h1>
             <div>
                 {startPage > 0 && (
                     <span
@@ -59,7 +61,7 @@ const Users = (props) => {
                         className={
                             props.currentPage === p ? stile.selectedPage : null
                         }
-                        onClick={() => props.getUsers(p, props.pageSize)}
+                        onClick={() => props.getFriends(p, props.pageSize)}
                     >
                         {p}
                     </span>
@@ -78,4 +80,4 @@ const Users = (props) => {
     );
 };
 
-export default Users;
+export default Friends;
